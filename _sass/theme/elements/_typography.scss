@@ -1,0 +1,34 @@
+$list-indent: 1.5em;
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $head-family;
+  font-weight: 700;
+  margin-bottom: 1em;
+  color: $blue;
+}
+
+h3, h4, h5, h6 {
+  text-transform: uppercase;
+}
+
+ol {
+  margin-left: $list-indent;
+}
+
+ul.hashed {
+  list-style-type: none;
+  margin-left: $list-indent;
+
+  li {
+    &::before {
+      content: '#';
+      color: lighten($flamingo, 10%);
+      display: block;
+      float: left;
+      font-size: 0.8rem;
+      margin-left: -$list-indent;
+      margin-right: 0.3rem;
+      margin-top: 0.2rem;
+    }
+  }
+}

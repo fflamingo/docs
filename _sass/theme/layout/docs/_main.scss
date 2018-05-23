@@ -1,0 +1,386 @@
+// Vars
+$doc-content-padding: 3.2rem;
+$doc-background: lighten($grey-background, 4%);
+$sidebar-highlight-border-size: 2px;
+
+/** Body fix **/
+body {
+  // Fix for Safari
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/** Sidebar **/
+.documentation-sidebar-column {
+  background-color: $doc-background;
+}
+
+.documentation-sidebar {
+  position: fixed;
+  height: calc(100vh - #{$nav-bar-fixed-height});
+  margin-top: -$column-gap;
+  margin-left: -999px;
+  padding-left: 999px;
+  overflow-y: auto;
+
+  padding-top: 2rem;
+  background-color: $doc-background;
+
+  // font-family: $head-family;
+  font-size: 0.95rem;
+  color: $grey-dark;
+
+  .sidebar-content {
+    // Allows negative left margins
+    padding-left: 1.1rem;
+  }
+
+  h1, h2, h3 {
+    font-family: $head-family;
+    text-transform: uppercase;
+    margin-left: $sidebar-highlight-border-size;
+
+    &.has-separator {
+      padding-top: 0.8rem;
+      border-top: 1px solid $grey-lighter;
+      margin-right: 4em;
+    }
+  }
+
+  h3 {
+    font-weight: 700;
+    text-transform: none;
+    margin-bottom: 0.4em;
+  }
+
+  ul {
+    margin-left: 0;
+  }
+
+  li {
+    &::before { content: none }
+
+    margin-bottom: 0.1rem;
+
+    &.indent {
+      padding-left: 0.6rem;
+    }
+
+    &.subheader {
+      // font-weight: 700;
+      // font-size: 1.05em;
+      color: $blue;
+
+      &:not(:first-of-type) {
+        margin-top: 0.8rem;
+      }
+    }
+
+    a {
+      margin-left: -1rem;
+      padding-left: 1rem;
+
+      &, &:visited {
+        color: $grey-dark;
+        border-left: $sidebar-highlight-border-size solid transparent;
+      }
+    }
+
+    a.current {
+      font-weight: 700;
+      color: $grey-darker;
+      border-left: $sidebar-highlight-border-size solid $flamingo;
+    }
+
+    a:hover {
+      color: lighten($grey-dark, 10%);
+    }
+  }
+
+  // Change indent for other levels
+  ul {
+    &.level-1 { margin-bottom: 1.8rem; }
+    &.level-2 {
+      margin-top: 0.3rem;
+      margin-bottom: 0.6rem;
+    }
+    &.level-3 { margin-bottom: 0.5rem; }
+  }
+
+  ul.level-2 li {
+    font-size: 0.95em;
+    color: lighten($grey-dark, 20%);
+    line-height: 1.4em;
+
+    a {
+      padding-left: 1.4rem;
+    }
+  }
+
+  // ul.level-2 li a {
+  //   padding-left: 1.8rem;
+  //   color: lighten($grey-dark, 20%);
+  // }
+
+  // Mobile sidebar
+  @media (max-width: 768px) {
+    position: absolute;
+    display: none;
+  }
+}
+
+/** Content **/
+.documentation-content {
+  min-height: 80vh;
+  line-height: 1.7;
+  padding: $doc-content-padding;
+  background-color: white;
+
+  // TOC
+  .toc {
+    color: darken($grey-light, 15%);
+    margin-bottom: 3rem;
+    border-left: 2px solid $grey-lighter;
+    padding-left: 1rem;
+
+    #toctitle {
+      padding-bottom: 0.8em;
+    }
+  }
+
+  // Headings
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.7rem; margin-top: 2.2em; }
+  h3 { font-size: 1.2rem; margin-top: 2.2em; }
+
+  // Block titles
+  .title {
+    margin-bottom: 0.2rem;
+    font-size: 0.9rem;
+    color: darken($grey-light, 10%);
+  }
+
+  // Anchors
+  h1, h2, h3, h4, h5, h6 {
+    a, a:visited, a:hover {
+      color: $blue;
+    }
+
+    &::before {
+      content: ' ';
+      display: inline-block;
+      vertical-align: center;
+      background-image: url("/assets/images/icons/anchor.svg");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 0.8em;
+      height: 0.8em;
+      margin-left: -1em;
+      margin-right: 0.2em;
+      transition: opacity 0.1s ease-in;
+      opacity: 0;
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
+  }
+
+  // Images
+  img {
+    // *Sigh*.. made since we don't want to override bulma `width: auto, height: auto`,
+    // but we need custom sizes.
+    &[height="100"] { height: 100px };
+    &[height="200"] { height: 200px };
+    &[height="300"] { height: 300px };
+  }
+
+  // .imageblock.scale-half {
+  //   -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
+  //      -moz-transform: scale(0.5); /* FF3.5+ */
+  //       -ms-transform: scale(0.5); /* IE9 */
+  //        -o-transform: scale(0.5); /* Opera 10.5+ */
+  //           transform: scale(0.5);
+  //              /* IE6–IE9 */
+  //              filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.9999619230641713, M12=-0.008726535498373935, M21=0.008726535498373935, M22=0.9999619230641713,SizingMethod='auto expand');
+  // }​
+
+  .imageblock.read-width {
+    max-width: 42em;
+
+    img {
+      box-shadow: 0px 1px 3px 0px rgba(201,201,201,0.6);
+    }
+  }
+
+  // Spacing
+  p, .paragraph { margin-bottom: 0.6rem; }
+
+  .listingblock, .admonitionblock { margin-bottom: 1.2rem; }
+
+  .paragraph + :not(.paragraph) {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .paragraph + .olist, .paragraph + .ulist {
+    margin-top: 1.5rem;
+  }
+
+  code, pre {
+    font-family: $mono-family;
+  }
+
+  // Readability
+  p, .paragraph, .admonitionblock {
+    max-width: 42em;
+  }
+
+  // Highlight
+  .highlight {
+    background-color: lighten($grey-background, 4%);
+    border-radius: 3px;
+  }
+
+  .listingblock {
+    > .content {
+      position: relative;
+    }
+
+    code[data-lang]:before {
+      opacity: 0.8;
+      content: attr(data-lang);
+      position: absolute;
+      font-size: 0.85em;
+      top: 0.8rem;
+      right: 0.8rem;
+      line-height: 1;
+      text-transform: uppercase;
+      color: $grey-light;
+      transition: opacity 0.15s linear;
+    }
+
+    &:hover code[data-lang]:before {
+      opacity: 1;
+    }
+
+    // Copy btn
+    .button-copy {
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      opacity: 0;
+      transition: opacity 0.1s ease-in;
+    }
+
+    &:hover .button-copy {
+      opacity: 1;
+    }
+  }
+
+  // Tables
+  table.tableblock {
+    width: 100%;
+    // border: 1px solid $grey-background;
+
+    &.frame-none { border: none; }
+    &.frame-topbot { border-top: 1px solid $grey-background; border-bottom: 1px solid $grey-background; }
+    &.frame-sides { border-left: 1px solid $grey-background; border-right: 1px solid $grey-background; }
+    &.frame-all { border: 1px solid $grey-background; }
+
+    &.grid-none { td, th { border: none; } }
+    &.grid-cols { td, th { border-left: 1px solid $grey-background; border-right: 1px solid $grey-background; } }
+    &.grid-rows { td, th { border-top: 1px solid $grey-background; border-bottom: 1px solid $grey-background; } }
+    &.grid-all { td, th { border: 1px solid $grey-background; } }
+
+    th {
+      background-color: lighten($grey-background, 3%);
+      color: $grey-dark;
+    }
+
+    td, th {
+      padding: 0.6rem;
+    }
+
+    td:first-child, th:first-child { border-left: none; }
+    td:last-child, th:last-child { border-right: none; }
+
+    .halign-right { text-align: right }
+    .halign-center { text-align: center }
+  }
+
+  // List
+  li {
+    p, .paragraph {
+      // margin-top: 1rem;
+      // margin-bottom: 1rem;
+    }
+  }
+
+  ul li ul {
+    margin-left: 1em;
+  }
+
+  .ulist ul {
+    list-style: disc;
+    margin-left: 1.5em;
+
+    li ul {
+      list-style: circle;
+    }
+  }
+
+  // Callout
+  .colist {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .colist table tr > td > img {
+    margin-right: 1em;
+  }
+}
+
+/** General **/
+.documentation {
+  margin-top: $nav-bar-fixed-height + $column-gap;
+}
+
+/** Footer **/
+.documentation footer {
+  margin-right: -999px;
+  padding-right: 999px;
+  padding-left: $doc-content-padding;
+}
+
+/** Navigation prev/next **/
+.documentation-navigation {
+  // background: linear-gradient(135deg, rgba(51, 102, 255, 1) 0%, rgba(50, 79, 255, 1) 100%);
+  background-color: $grey-background;
+  margin-right: -999px;
+  padding-right: 999px;
+  padding-top: $doc-content-padding;
+  padding-bottom: $doc-content-padding;
+  padding-left: $doc-content-padding;
+
+  .left {
+    text-align: left;
+  }
+
+  .right {
+    text-align: right;
+  }
+}
+
+/** Reset **/
+code {
+  background-color: lighten($grey-background, 2%);
+  border-radius: 3px;
+  font-size: 0.8em;
+  color: $grey-darker;
+}
+
+pre code {
+  font-size: 0.9em;
+}

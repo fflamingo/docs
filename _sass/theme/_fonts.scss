@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  normal;
+  font-weight: 400;
+  src: url("fonts/Inter-UI-Regular.woff2?v=2.2") format("woff2"),
+       url("fonts/Inter-UI-Regular.woff?v=2.2") format("woff");
+}
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  italic;
+  font-weight: 400;
+  src: url("fonts/Inter-UI-Italic.woff2?v=2.2") format("woff2"),
+       url("fonts/Inter-UI-Italic.woff?v=2.2") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  normal;
+  font-weight: 700;
+  src: url("fonts/Inter-UI-Bold.woff2?v=2.2") format("woff2"),
+       url("fonts/Inter-UI-Bold.woff?v=2.2") format("woff");
+}
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  italic;
+  font-weight: 700;
+  src: url("fonts/Inter-UI-BoldItalic.woff2?v=2.2") format("woff2"),
+       url("fonts/Inter-UI-BoldItalic.woff?v=2.2") format("woff");
+}
+
+@font-face {
+    font-family: 'League Spartan';
+    src: url('fonts/leaguespartan-bold.woff2') format('woff2'),
+         url('fonts/leaguespartan-bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}

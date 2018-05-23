@@ -1,0 +1,95 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: FFlamingo Docs
+email: info@favoloso.team
+description: >- # this means to ignore newlines until "baseurl:"
+  Documentazione per il Framework Flamingo
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+
+# Asciidoc
+asciidoc: {}
+asciidoctor:
+  base_dir: :docdir
+  safe: unsafe
+  attributes:
+    - idprefix=_
+    - source-highlighter=rouge
+    - pygments-css=class
+    - rouge-css=class
+    - showtitle
+    - icons
+    - iconsdir=/assets/images/icons
+    - imagesdir=/assets/images
+    - icontype=svg
+    - toc
+    - sectlinks
+    - stem
+
+# Search
+# algolia:
+#   application_id: ZSSVB9LL6E
+#   index_name: docs
+#   nodes_to_index: 'p,table'
+#   extensions_to_index:
+#     - html
+#     - md
+#     - adoc
+
+keep_files:
+  - assets/images
+
+
+# Adds documentation custom type
+collections:
+  docs:
+    output: true
+
+
+defaults:
+
+  -
+    scope:
+      path: _posts
+      type: posts
+    values:
+      layout: post
+      sectionid: blog
+
+  -
+    scope:
+      path: _docs
+      type: docs
+    values:
+      layout: docs
+      sectionid: docs
+      seo:
+        type: "WebPage"

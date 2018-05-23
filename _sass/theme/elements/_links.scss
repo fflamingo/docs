@@ -1,0 +1,10 @@
+.negative {
+  a, a:visited {
+    color: #fcfcfc;
+    transition: all 0.2s ease-in;
+  }
+  
+  a:hover {
+    color: #fff;
+  }
+}

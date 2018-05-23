@@ -1,0 +1,14 @@
+footer.site-footer {
+  background-color: $negative;
+  color: $flamingo-invert;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+
+  img {
+    margin-bottom: 0.8rem;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: white;
+  }
+}

@@ -1,0 +1,13 @@
+---
+---
+
+= Button
+
+Un semplice pulsante.
+
+[source,tsx]
+----
+import Ui from '@fflamingo/ui';
+
+<Ui.Button onClick={...}>I'm a button!</Ui.Button>
+----

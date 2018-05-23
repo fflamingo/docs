@@ -1,0 +1,13 @@
+{% if include.child.name %}
+  {% include docs-sidebar-link.html doc=include.child.name %}
+
+  {% assign subchildren = include.child.children %}
+  {% assign sublevel = include.level + 1 %}
+  <ul class="level-{{ include.level }}">
+    {% for subchild in subchildren %}
+      {% include docs-sidebar-level.html level=sublevel child=subchild %}
+    {% endfor %}
+  </ul>
+{% else %}
+  {% include docs-sidebar-link.html doc=include.child %}
+{% endif %}

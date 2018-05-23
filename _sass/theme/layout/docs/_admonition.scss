@@ -1,0 +1,84 @@
+// Reset per le table
+.documentation-content table.tableblock .admonitionblock td {
+  border: none;
+}
+
+.documentation {
+  .admonitionblock {
+    // Custom rendering for listings inside admonition
+    .listingblock {
+      .highlight {
+        background-color: white;
+      }
+    }
+
+    .listingblock:last-child {
+      margin-bottom: 0;
+    }
+
+    // Icon & colors
+    td.icon {
+      background-color: $grey-dark;
+      padding: 0.8rem;
+      padding-top: 1rem;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      min-width: 3rem;
+      min-height: 3rem;
+
+      // Reset bulma
+      vertical-align: middle;
+      display: table-cell;
+      line-height: 1;
+
+      img {
+        max-width: 24px;
+        max-height: 24px;
+      }
+    }
+
+    td.content {
+      background-color: $doc-background;
+      padding: 0.8rem;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+
+    /** Special Types **/
+    &.tip {
+      td.icon {
+        background-color: $success;
+      }
+    }
+
+    &.caution {
+      td.icon {
+        background-color: $danger;
+      }
+    }
+
+    &.note {
+      td.icon {
+        background-color: #41CDD8;
+      }
+    }
+
+    &.warning {
+      td.icon {
+        background-color: $warning;
+      }
+    }
+
+    &.important {
+      td.icon {
+        background-color: $blue;
+      }
+    }
+
+    &.wip {
+      td.icon {
+        background-color: #FFAF45;
+      }
+    }
+  }
+}

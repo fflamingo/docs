@@ -1,0 +1,9 @@
+---
+layout: docs
+lang: it
+permalink: /docs/index.html
+---
+
+= Documentazione
+
+Benvenuto sulla documentazione di **FFlamingo**.

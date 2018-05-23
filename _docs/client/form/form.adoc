@@ -1,0 +1,13 @@
+---
+---
+
+= Configurazione del Form
+
+[source,tsx]
+----
+import Form from '@fflamingo/form'
+
+<Form>
+  <Form.Field type="text" />
+</Form>
+----

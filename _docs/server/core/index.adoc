@@ -1,0 +1,9 @@
+---
+---
+
+= Core
+
+Contiene gli elementi fondanti del Server, come il routing, la gestione
+di richieste e risposte, ecc.
+
+Si fonda su *Express.js*.

@@ -1,0 +1,8 @@
+{% assign doc_id = include.doc | replace: '*', '' | prepend:'/docs/' %}
+{% assign doc    = site.docs | where:'id', doc_id | first %}
+<li class="{% if include.doc contains '*' %}subheader{% endif %}">
+  {% if doc.title == '' %}ERROR!{% endif %}
+  <a href="{{ doc.url }}" class="{% if page.url == doc.url %}current{% endif %}" title="{{ doc.title }}">
+    {{ doc.title }}
+  </a>
+</li>

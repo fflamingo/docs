@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "it" }}">
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html classname="is-overlay" %}
+
+    <!-- Hero -->
+    <section class="hero">
+        {% include header.html transparent=true %}
+        <div class="container">
+            <div class="hero-body">
+                <div class="columns is-vcentered">
+                    <div class="column is-four-fifths is-vcentered">
+                        <h1>Documentazione del Framework</h1>
+                        <p class="description">
+                            Questo sito contiene il manuale di utilizzo del Framework Flamingo,
+                            con il riferimento a tutti gli strumenti a disposizione.
+                        </p>
+                        <p>
+                            <a class="button is-info is-large" href="{{ site.baseurl }}/docs/">
+                                Vai alla Documentazione
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  </body>
+
+</html>
+
+
+{% include javascript-bridge.html %}
+<script>
+    // var image = document.querySelectorAll('.header-admin');
+    // window.addEventListener('mousemove', function (e) {
+    //     var bounds = image[0].getBoundingClientRect();
+    //     var ratioX = (e.screenX - (bounds.left + bounds.width / 2)) / window.innerWidth;
+    //     var ratioY = (e.screenY - (bounds.top + bounds.height / 2)) / window.innerHeight;
+    //     var transform = 'rotateX(' + (-ratioY * 15) + 'deg) rotateY(' + (+ratioX * 15) + 'deg)';
+    //
+    //     for (var i=0; i < image.length; i++) {
+    //         image[i].style.transform = transform + ' translateZ(' + i * 10 + 'px)';
+    //         image[i].style.webkitTransform = transform + ' translateZ(' + i * 10 + 'px)';
+    //     }
+    // });
+
+    var navbar = document.querySelector('nav.navbar');
+    window.addEventListener('scroll', function (e) {
+        var scrollY         = window.pageYOffset || document.documentElement.scrollTop;
+        var isOverlay       = document.body.classList.contains('has-overlay-nav-bar');
+        if (scrollY > 200 && !isOverlay) {
+            document.body.classList.add('has-overlay-nav-bar');
+        }
+        else if(scrollY < 190 && isOverlay) {
+            document.body.classList.remove('has-overlay-nav-bar');
+        }
+    });
+</script>
+
+{% comment %}
+<div class="home">
+
+  <h1 class="page-heading">Posts</h1>
+
+  {{ content }}
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+
+</div>
+{% endcomment %}

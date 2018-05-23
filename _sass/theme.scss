@@ -1,0 +1,38 @@
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+@import "../node_modules/bulma/sass/utilities/functions";
+@import "theme/variables";
+
+// Use blue as primary color.
+$primary: $blue;
+$primary-invert: $blue-invert;
+
+$info: $flamingo;
+
+$family-primary: $body-family;
+
+$radius-small: 2px;
+$radius: 2px;
+$radius-large: 2px;
+
+@import "../node_modules/bulma/sass/utilities/derived-variables.sass";
+@import "../node_modules/bulma/bulma";
+
+// Fonts
+@import "theme/fonts";
+
+// main theme
+@import "theme/layout/layout";
+@import "theme/layout/header";
+@import "theme/layout/hero";
+@import "theme/layout/footer";
+@import "theme/layout/search";
+
+@import "theme/elements/buttons";
+@import "theme/elements/typography";
+@import "theme/elements/links";
+@import "theme/elements/flags";
+
+@import "theme/components/shell";
+
+@import "theme/layout/docs/main";
+@import "theme/layout/docs/admonition";

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "it" }}">
+
+  {% include head.html %}
+
+  <body>
+    {% include header.html classname="is-fixed" search=true %}
+    <section class="documentation">
+      <div class="container">
+        <div class="columns">
+          <!-- Sidebar -->
+          <div class="column documentation-sidebar-column is-3">
+            <div class="documentation-sidebar">
+              <div class="sidebar-content">
+                {% include docs-sidebar.html %}
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Content -->
+          <div class="column is-9 is-paddingless">
+            <div class="documentation-content">
+              {{ page.document | tocify_asciidoc: 2 }}
+
+              <!-- Documentation -->
+              {{ content }}
+              <!-- /Documentation -->
+            </div>
+
+            <div class="documentation-navigation">
+              {% include docs-pagination.html %}
+            </div>
+
+            {% include footer.html fluid=true %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% include javascript-bridge.html %}
+    {% include math-support.html %}
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+    <script src="/assets/js/docs.js"></script>
+  </body>
+
+</html>

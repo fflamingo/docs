@@ -1,0 +1,20 @@
+- title: Getting Started
+  children:    
+    - intro/installation
+    - intro/getting-started
+
+- title: Client
+  children:
+    - name: client/ui/index
+      children:
+        - client/ui/button
+        
+    - name: client/form/index
+      children:
+        - client/form/form
+
+- title: Server
+  children:
+    - name: server/core/index
+      children:
+        - server/core/route

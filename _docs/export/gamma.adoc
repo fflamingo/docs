@@ -1,0 +1,28 @@
+---
+---
+
+= Gamma
+
+E' possibile personalizzare l'esportazione verso i sistemi interni di _Gamma Enterprise_
+ mediante alcuni link:/docs/language/property/tags.html[tag].
+
+[%autowidth%header,cols=",a"]
+|===
+| Tag | Descrizione
+| *gm_pacchetto* | Specifica se è una colonna che deve essere esportata verso la tabella `KO02_PACCHETTO`
+| *gm_column* (CV) | Specifica il nome della colonna esportata
+| *gm_column_type* (CV) | Specifica il tipo di dati della colonna di `KO02_PACCHETTO`
+| *gm_source* (CV) | Permette di ridefinire la sorgente della proprietà, con un percorso
+relativo alla *Proprietà*. Ad esempio, una proprietà:
+
+[source,konfig]
+----
+modello Posizione
+  proprietà
+    AppPerim: app_sx
+      tag gm_pacchetto, gm_column="AppSx", gm_source="@.nome"
+----
+
+Esporterà il valore presente in `posizione.app_sx.nome` nella colonna _"AppSx"_
+
+|===

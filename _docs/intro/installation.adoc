@@ -1,0 +1,14 @@
+---
+---
+
+= Installazione
+
+Per installare *FFlamingo* è sufficiente utilizzare i seguenti comandi:
+
+[source,sh]
+----
+yarn add @fflamingo/client @fflamingo/server
+
+# Oppure con NPM
+npm i --save @fflamingo/client @fflamingo/server
+----

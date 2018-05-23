@@ -1,0 +1,39 @@
+{% comment %}
+Flattens sections, as shown in:
+https://github.com/jekyll/jekyll/blob/master/docs/_includes/section_nav.html
+{% endcomment %}
+{% assign docs = site.data.docs_navigation | linear_pagination  %}
+{% assign doc_pages = site.docs  %}
+
+{% comment %}
+Because this is built for every page, lets find where we are in the ordered
+document list by comparing url strings. Then if there's something previous or
+next, lets build a link to it.
+{% endcomment %}
+
+{% for document in docs %}
+  {% assign document_id = document | prepend:"/docs/" %}
+  {% if document_id == page.id %}
+    <div class="pagination columns">
+      <div class="column left is-6">
+          {% if forloop.first %}
+          {% else %}
+            {% assign previous = forloop.index0 | minus: 1 %}
+            {% assign previous_page_id = docs[previous] | prepend:"/docs/" %}
+            {% assign previous_page    = doc_pages | where:'id', previous_page_id  | first %}
+            <a class="button is-info is-large" href="{{ previous_page.url }}" class="prev">← {{ previous_page.title }}</a>
+          {% endif %}
+      </div>
+      <div class="column right is-6">
+          {% if forloop.last %}
+          {% else %}
+            {% assign next = forloop.index0 | plus: 1 %}
+            {% assign next_page_id = docs[next] | prepend:"/docs/" %}
+            {% assign next_page    = doc_pages | where:'id', next_page_id | first  %}
+            <a class="button is-info is-large" href="{{ next_page.url }}" class="next">{{ next_page.title }} →</a>
+          {% endif %}
+      </div>
+    </div>
+    {% break %}
+  {% endif %}
+{% endfor %}

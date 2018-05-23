@@ -1,0 +1,12 @@
+---
+---
+
+= User Interface
+
+Contiene un Wrapper per gli elementi dell'*interfaccia grafica* contenuti
+all'interno del Framework.
+
+Può essere sostuito utilizzando altri `ui-provider`, ad esempio: 
+
+- `@fflamingo/ui-provider-blueprintjs`
+- `@fflamingo/ui-provider-antd`

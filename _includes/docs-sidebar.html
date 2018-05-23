@@ -1,0 +1,18 @@
+{% assign nav = site.data.docs_navigation %}
+
+{% for item in nav %}
+  {% if item.title %}
+    <h2 class="{% if item.separator %}has-separator{% endif %}">{{ item.title }}</h2>
+    <ul class="level-1">
+  {% else %}
+    <h3>{{ item.subtitle }}</h3>
+    <ul class="level-1">
+  {% endif %}
+
+  {% for child in item.children %}
+    {% comment %}Multiple level{% endcomment %}
+    {% include docs-sidebar-level.html level=2 child=child %}
+
+  {% endfor %}
+  </ul>
+{% endfor %}

@@ -1,0 +1,84 @@
+/** Documentation header */
+nav.navbar {
+  height: $nav-bar-height;
+  width: 100%;
+  // position: fixed;
+
+  // font-family: $head-family;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: $blue-invert;
+
+  img.logo {
+    width: 200px;
+  }
+
+  &:not(.is-transparent) {
+    background: linear-gradient(45deg, #6e0be0, rgba(255, 121, 121, 0) 70%),
+                linear-gradient(135deg, #0463f1 10%, rgba(190, 46, 221, 0) 80%),
+                linear-gradient(225deg, #02cfb0 10%, rgba(72, 52, 212, 0) 80%);
+  }
+
+  &.is-transparent {
+    background: transparent;
+  }
+
+  &.is-overlay {
+    top: -1000px;
+    z-index: 200;
+    position: absolute;
+  }
+
+  /**
+   * Used in documentation. Shorter since it is always visible and space is
+   * useful there.
+   */
+  &.is-fixed {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    height: $nav-bar-fixed-height;
+
+    img.logo {
+      width: 160px;
+    }
+  }
+
+  body.has-overlay-nav-bar &.is-overlay {
+    top: 0;
+    position: fixed;
+    animation: navbarSlideIn 0.2s;
+  }
+
+  .navbar-item img {
+    max-height: none;
+  }
+
+  .navbar-item {
+    color: $blue-invert;
+    transition: all 0.1s ease-in;
+
+    &:hover {
+      background-color: $flamingo;
+    }
+
+    &:hover#search-box {
+      background-color: transparent;
+    }
+  }
+
+  // Flags
+  .navbar-item .flag {
+    margin-right: 0.6em;
+  }
+}
+
+@keyframes navbarSlideIn {
+  0% { top: -$nav-bar-height; }
+  100% { top: 0; }
+}
+
+@keyframes navbarSlideOut {
+  0% { top: 0; }
+  100% { top: -$nav-bar-height; }
+}

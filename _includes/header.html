@@ -1,0 +1,29 @@
+<nav class="navbar {% if include.transparent %}is-transparent{% endif %} {{ include.classname }}">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{{ '/' | relative_url }}">
+                <img src="{{ site.baseurl }}/assets/images/fflamingo-long-inverted.svg" class="logo" alt="Logo Favoloso Team" />
+            </a>
+        </div>
+
+        <div class="navbar-menu">
+            <div class="navbar-start">
+              {% if include.search %}
+              <div class="navbar-item" id="search-box">
+                <div class="control has-icons-left">
+                  <input class="input search-input" id="search-input" type="text" placeholder="Cerca nella Documentazione...">
+                  <span class="icon is-small is-left">
+                    <img class="search-icon" src="{{site.baseurl}}/assets/images/lente-ingrandimento.svg" alt="Cerca" width="16">
+                  </span>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+            <div class="navbar-end">
+                <a class="navbar-item" href="{{ '/docs/' | relative_url }}">
+                    Documentazione
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>

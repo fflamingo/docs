@@ -1,0 +1,27 @@
+---
+---
+
+= Lead Time
+
+Il *Lead Time* viene calcolato come *valore massimo* fra tutte le proprietà
+(di tipo `numero`) che abbiano il Tag `lead_time`.
+
+A questo numero, viene _successivamente_ sommato il *valore massimo* di tutte
+le proprietà con Tag `add_lead_time`.
+
+CAUTION: Viene aggiunto al _lead time_ il *valore massimo* di tutte le proprietà
+`add_lead_time`; ad esempio se si hanno due proprietà `add_lead_time` con valore `3` e `6`,
+verrà sommato solamente il valore `6`.
+
+NOTE: Questa distinzione permette di gestire tempi di fornitura e tempi
+di lavorazione, dato che rimangono indipendenti.
+
+== Comandi disponibili
+
+[%autowidth,cols=",a",frame="none",grid="rows"]
+|===
+| *lead_time*
+| _Applicabile solamente su proprietà di tipo `numero`_
+| *add_lead_time*
+| _Applicabile solamente su proprietà di tipo `numero`_
+|===

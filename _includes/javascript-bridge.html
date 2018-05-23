@@ -1,0 +1,9 @@
+{% comment %}
+Hoists Jekyll variables to javascript environments
+{% endcomment %}
+<script>
++function() {
+  window.JEKYLL = window.JEKYLL || {};
+  window.JEKYLL.lang = "{{ page.lang | default:"it" }}";
+}();
+</script>

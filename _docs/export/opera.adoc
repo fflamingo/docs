@@ -1,0 +1,119 @@
+---
+---
+
+= Opera
+
+L'esportazione verso Opera in formato XML è configurabile mediante l'utilizzo di alcuni
+link:/docs/language/property/tags.html[tag] specializzati.
+
+IMPORTANT: La struttura di base dell'XML rimane comunque statica in base al tipo
+di prodotto (Complemento, Infisso, ecc.) configurata.
+
+== Opzioni `cmp_options`
+
+Ogni proprietà con il tag `op_option` verrà esportata nell'elenco `cmp_options`.
+Ad esempio, la seguente proprietà:
+
+[source,konfig]
+----
+testo: martellina  default ""   tag op_option, op_option_name="Martellina"
+----
+
+Supponendo abbia il valore `"Martellina Standard"`, verrà esportata verso Opera
+nel seguente modo:
+
+[source,xml]
+----
+<cmp_options>
+  ...
+  <coption>
+    <opt_name>Martellina</opt_name>
+    <opt_value>Martellina Standard</opt_value>
+  </coption>
+</cmp_options>
+----
+
+[%autowidth%header,cols=",a",frame="none",grid="rows"]
+|===
+| Tag | Descrizione
+| `op_option` | Abilita l'esportazione verso Opera nella sezione `cmp_options`
+| `op_option_name` (CV) | Il nome dell'opzione, ovvero il campo `opt_name` dell'XML, in formato testuale
+| `op_option_name_property` (CV) | In caso il nome dell'opzione sia *dinamico*, ovvero cambi
+ in base alla configurazione oltre al valore stesso, è possibile configurarlo dinamicamente
+ specificando qui una proprietà, sempre di tipo testuale, da cui prendere l'`opt_name`.
+
+[TIP]
+====
+Il nome della proprietà deve essere riferito al _modello_. Ad esempio:
+
+[source,konfig]
+----
+modello FerramentaInfissi
+  proprietà
+    testo: nome_opzione_martellina
+    testo: opzione_martellina
+      tag op_option,
+          op_option_name_property="nome_opzione_martellina"
+----
+====
+
+| `op_option_exclude_composed` | Disabilita l'esportazione della proprietà solo per le *tipologie composte*.
+|===
+
+== Colori `colors`
+
+Ogni proprietà con il tag `op_color` verrà esportata nell'array XML `<colors>`, ad esempio:
+
+[source,konfig]
+----
+testo: colore_canalina
+  default "Grigio"
+  tag op_color, op_color_name="Colore Canalina"
+----
+
+Verrà esportata come:
+
+[source,xml]
+----
+<colors>
+  ...
+  <color>
+    <col_type>Colore Canalina</col_type>
+    <col_name>Grigio</col_name>
+    <col_description>Grigio</col_description>
+  </color>
+</colors>
+----
+
+[%autowidth%header,cols=",a"]
+|===
+| Tag | Descrizione
+| `op_color` | Esporta la proprietà nell'XML nella sezione `colors`
+| `op_color_name` | Imposta il valore dell'elemento `<col_type>` dell'XML
+|===
+
+== Materiali `materials`
+
+Gestiscono l'esportazione dei materiali nell'XML
+
+[%autowidth%header,cols=",a"]
+|===
+| Tag | Descrizione
+| `op_material_app_perim` (CV) | Esporta l'applicazione perimetrale con la chiave fornita, i.e. `op_material_app_perim="sx"`
+|===
+
+== Generali
+
+Questi tag sono generalmente correlati ad Opera, ma possono essere impostati
+su diverse proprietà in base alla funzionalità richiesta.
+
+[%autowidth%header,cols=",a",frame="none",grid="rows"]
+|===
+| Tag | Descrizione
+| `op_ignore` | Disabilita l'esportazione verso Opera di *tutto il sotto-albero di configurazione*.
+Ad esempio, permette di ignorare una Tipologia.
+| `op_index` (CV) | Assegnato con un valore numerico, cambia l'ordinamento delle proprietà esportate.
+
+TIP: Di default le proprietà sono esportate *in ordine di definizione*.
+
+|===
