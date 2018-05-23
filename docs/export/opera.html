@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="it">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Opera</title>
+  <meta name="description" content="Opera">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400i,700|Roboto+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/highlight/atelier.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/primer-tooltips@1.5.2/build/build.css" />
+  <link rel="canonical" href="/docs/export/opera.html">
+  <link rel="alternate" type="application/rss+xml" title="FFlamingo Docs" href="/feed.xml">
+
+  
+</head>
+
+
+  <body>
+    <nav class="navbar  is-fixed">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="/assets/images/fflamingo-long-inverted.svg" class="logo" alt="Logo Favoloso Team" />
+            </a>
+        </div>
+
+        <div class="navbar-menu">
+            <div class="navbar-start">
+              
+              <div class="navbar-item" id="search-box">
+                <div class="control has-icons-left">
+                  <input class="input search-input" id="search-input" type="text" placeholder="Cerca nella Documentazione...">
+                  <span class="icon is-small is-left">
+                    <img class="search-icon" src="/assets/images/lente-ingrandimento.svg" alt="Cerca" width="16">
+                  </span>
+                </div>
+              </div>
+              
+            </div>
+            <div class="navbar-end">
+                <a class="navbar-item" href="/docs/">
+                    Documentazione
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <section class="documentation">
+      <div class="container">
+        <div class="columns">
+          <!-- Sidebar -->
+          <div class="column documentation-sidebar-column is-3">
+            <div class="documentation-sidebar">
+              <div class="sidebar-content">
+                
+
+
+  
+    <h2 class="">Getting Started</h2>
+    <ul class="level-1">
+  
+
+  
+    
+    
+  
+
+<li class="">
+  
+  <a href="/docs/intro/installation.html" class="" title="Installazione">
+    Installazione
+  </a>
+</li>
+
+
+
+
+  
+    
+    
+  
+
+<li class="">
+  
+  <a href="/docs/intro/getting-started.html" class="" title="Getting Started">
+    Getting Started
+  </a>
+</li>
+
+
+
+
+  
+  </ul>
+
+  
+    <h2 class="">Client</h2>
+    <ul class="level-1">
+  
+
+  
+    
+    
+  
+
+<li class="">
+  
+  <a href="/docs/client/ui/index.html" class="" title="User Interface">
+    User Interface
+  </a>
+</li>
+
+
+  
+  
+  <ul class="level-2">
+    
+      
+  
+
+<li class="">
+  
+  <a href="/docs/client/ui/button.html" class="" title="Button">
+    Button
+  </a>
+</li>
+
+
+
+    
+  </ul>
+
+
+
+  
+    
+    
+  
+
+<li class="">
+  
+  <a href="/docs/client/form/index.html" class="" title="Form">
+    Form
+  </a>
+</li>
+
+
+  
+  
+  <ul class="level-2">
+    
+      
+  
+
+<li class="">
+  
+  <a href="/docs/client/form/form.html" class="" title="Configurazione del Form">
+    Configurazione del Form
+  </a>
+</li>
+
+
+
+    
+  </ul>
+
+
+
+  
+  </ul>
+
+  
+    <h2 class="">Server</h2>
+    <ul class="level-1">
+  
+
+  
+    
+    
+  
+
+<li class="">
+  
+  <a href="/docs/server/core/index.html" class="" title="Core">
+    Core
+  </a>
+</li>
+
+
+  
+  
+  <ul class="level-2">
+    
+      
+  
+
+<li class="">
+  
+  <a href="/docs/server/core/route.html" class="" title="Router">
+    Router
+  </a>
+</li>
+
+
+
+    
+  </ul>
+
+
+
+  
+  </ul>
+
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Content -->
+          <div class="column is-9 is-paddingless">
+            <div class="documentation-content">
+              
+
+              <!-- Documentation -->
+              <h1>Opera</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_opzioni-code-cmp_options-code">Opzioni <code>cmp_options</code></a></li>
+<li><a href="#_colori-code-colors-code">Colori <code>colors</code></a></li>
+<li><a href="#_materiali-code-materials-code">Materiali <code>materials</code></a></li>
+<li><a href="#_generali">Generali</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>L&#8217;esportazione verso Opera in formato XML è configurabile mediante l&#8217;utilizzo di alcuni
+<a href="/docs/language/property/tags.html">tag</a> specializzati.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="/assets/images/icons/important.svg" alt="Important">
+</td>
+<td class="content">
+La struttura di base dell&#8217;XML rimane comunque statica in base al tipo
+di prodotto (Complemento, Infisso, ecc.) configurata.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_opzioni-code-cmp_options-code"><a class="link" href="#_opzioni-code-cmp_options-code">Opzioni <code>cmp_options</code></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ogni proprietà con il tag <code>op_option</code> verrà esportata nell&#8217;elenco <code>cmp_options</code>.
+Ad esempio, la seguente proprietà:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plaintext" data-lang="plaintext"><span id="L1" class="line">testo: martellina  default ""   tag op_option, op_option_name="Martellina"</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Supponendo abbia il valore <code>"Martellina Standard"</code>, verrà esportata verso Opera
+nel seguente modo:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span id="L1" class="line"><span class="nt">&lt;cmp_options&gt;</span></span>
+<span id="L2" class="line">  ...</span>
+<span id="L3" class="line">  <span class="nt">&lt;coption&gt;</span></span>
+<span id="L4" class="line">    <span class="nt">&lt;opt_name&gt;</span>Martellina<span class="nt">&lt;/opt_name&gt;</span></span>
+<span id="L5" class="line">    <span class="nt">&lt;opt_value&gt;</span>Martellina Standard<span class="nt">&lt;/opt_value&gt;</span></span>
+<span id="L6" class="line">  <span class="nt">&lt;/coption&gt;</span></span>
+<span id="L7" class="line"><span class="nt">&lt;/cmp_options&gt;</span></span></code></pre>
+</div>
+</div>
+<table class="tableblock frame-none grid-rows">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tag</th>
+<th class="tableblock halign-left valign-top">Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>op_option</code></p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Abilita l&#8217;esportazione verso Opera nella sezione <code>cmp_options</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>op_option_name</code> (CV)</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Il nome dell&#8217;opzione, ovvero il campo <code>opt_name</code> dell&#8217;XML, in formato testuale</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>op_option_name_property</code> (CV)</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>In caso il nome dell&#8217;opzione sia <strong>dinamico</strong>, ovvero cambi
+ in base alla configurazione oltre al valore stesso, è possibile configurarlo dinamicamente
+ specificando qui una proprietà, sempre di tipo testuale, da cui prendere l'`opt_name`.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/assets/images/icons/tip.svg" alt="Tip">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Il nome della proprietà deve essere riferito al <em>modello</em>. Ad esempio:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plaintext" data-lang="plaintext"><span id="L1" class="line">modello FerramentaInfissi</span>
+<span id="L2" class="line">  proprietà</span>
+<span id="L3" class="line">    testo: nome_opzione_martellina</span>
+<span id="L4" class="line">    testo: opzione_martellina</span>
+<span id="L5" class="line">      tag op_option,</span>
+<span id="L6" class="line">          op_option_name_property="nome_opzione_martellina"</span></code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>op_option_exclude_composed</code></p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Disabilita l&#8217;esportazione della proprietà solo per le <strong>tipologie composte</strong>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_colori-code-colors-code"><a class="link" href="#_colori-code-colors-code">Colori <code>colors</code></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ogni proprietà con il tag <code>op_color</code> verrà esportata nell&#8217;array XML <code>&lt;colors&gt;</code>, ad esempio:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plaintext" data-lang="plaintext"><span id="L1" class="line">testo: colore_canalina</span>
+<span id="L2" class="line">  default "Grigio"</span>
+<span id="L3" class="line">  tag op_color, op_color_name="Colore Canalina"</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Verrà esportata come:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span id="L1" class="line"><span class="nt">&lt;colors&gt;</span></span>
+<span id="L2" class="line">  ...</span>
+<span id="L3" class="line">  <span class="nt">&lt;color&gt;</span></span>
+<span id="L4" class="line">    <span class="nt">&lt;col_type&gt;</span>Colore Canalina<span class="nt">&lt;/col_type&gt;</span></span>
+<span id="L5" class="line">    <span class="nt">&lt;col_name&gt;</span>Grigio<span class="nt">&lt;/col_name&gt;</span></span>
+<span id="L6" class="line">    <span class="nt">&lt;col_description&gt;</span>Grigio<span class="nt">&lt;/col_description&gt;</span></span>
+<span id="L7" class="line">  <span class="nt">&lt;/color&gt;</span></span>
+<span id="L8" class="line"><span class="nt">&lt;/colors&gt;</span></span></code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tag</th>
+<th class="tableblock halign-left valign-top">Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>op_color</code></p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Esporta la proprietà nell&#8217;XML nella sezione <code>colors</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>op_color_name</code></p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Imposta il valore dell&#8217;elemento <code>&lt;col_type&gt;</code> dell&#8217;XML</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_materiali-code-materials-code"><a class="link" href="#_materiali-code-materials-code">Materiali <code>materials</code></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Gestiscono l&#8217;esportazione dei materiali nell&#8217;XML</p>
+</div>
+<table class="tableblock frame-all grid-all">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tag</th>
+<th class="tableblock halign-left valign-top">Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>op_material_app_perim</code> (CV)</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Esporta l&#8217;applicazione perimetrale con la chiave fornita, i.e. <code>op_material_app_perim="sx"</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_generali"><a class="link" href="#_generali">Generali</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Questi tag sono generalmente correlati ad Opera, ma possono essere impostati
+su diverse proprietà in base alla funzionalità richiesta.</p>
+</div>
+<table class="tableblock frame-none grid-rows">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tag</th>
+<th class="tableblock halign-left valign-top">Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>op_ignore</code></p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Disabilita l&#8217;esportazione verso Opera di <strong>tutto il sotto-albero di configurazione</strong>.
+Ad esempio, permette di ignorare una Tipologia.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>op_index</code> (CV)</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Assegnato con un valore numerico, cambia l&#8217;ordinamento delle proprietà esportate.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/assets/images/icons/tip.svg" alt="Tip">
+</td>
+<td class="content">
+Di default le proprietà sono esportate <strong>in ordine di definizione</strong>.
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+              <!-- /Documentation -->
+            </div>
+
+            <div class="documentation-navigation">
+              
+
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+            </div>
+
+            <footer class="site-footer negative ">
+    <div class="container  is-fluid ">
+        <div class="columns">
+            <div class="column is-two-thirds">
+                <!-- <h2 class="is-size-3">FFlamingo Docs</h2> -->
+                <img src="/assets/images/favoloso-team.svg" width="160" alt="Logo Favoloso Team" />
+                <p>
+                    Documentazione del Framework Flamingo
+                </p>
+            </div>
+
+            <div class="column is-one-third">
+                Made by <a href="https://favoloso.team">Favoloso Team</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+<script>
++function() {
+  window.JEKYLL = window.JEKYLL || {};
+  window.JEKYLL.lang = "it";
+}();
+</script>
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(","\\)"]],
+    displayMath: [["\\[","\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$","\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+    <script src="/assets/js/docs.js"></script>
+  </body>
+
+</html>
